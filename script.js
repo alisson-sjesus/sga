@@ -81,14 +81,6 @@ function removerAtivo() {
 }
 
 
-
-sections.forEach(section => {
-  section.addEventListener('click', () => {
-    removerAtivoSection();
-    section.classList.add('ativo');
-  })
-})
-
 function removerAtivoSection() {
   sections.forEach(section => {
     if (section.classList.contains('ativo')) {
