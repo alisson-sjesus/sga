@@ -31,22 +31,35 @@
   color: #969696;
 }
 
-.ativo {
-  font-size: 1.5rem;
-  font-weight: 1000;
-  color: #6b6b6b !important;
-}
-
 .navbar li:hover {
   color: black;
   font-weight: 600;
 }
 
-.nfce {
-  display: flex;
+.section-nfce {
+  display: none;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+  animation: anima 0.5s forwards;
+}
+
+.ativo {
+  display: flex !important;
+  font-size: 1.5rem;
+  font-weight: 1000;
+  color: #6b6b6b !important;
+}
+
+@keyframes anima {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 label {
@@ -119,4 +132,9 @@ label {
 
 .btn-limpar:hover {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.section-script {
+  display: none;
+  animation: anima 0.5s forwards;
 }

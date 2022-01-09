@@ -57,3 +57,42 @@ function corrigirNFCE(nfce) {
 function copiar() {
   window.navigator.clipboard.writeText(resultadoArray);
 }
+
+// GERENCIAR TELAS
+
+const menus = document.querySelectorAll('li');
+const sections = document.querySelectorAll('section');
+
+menus.forEach((menu, index) => {
+  menu.addEventListener('click', () => {
+    removerAtivo();
+    menu.classList.add('ativo');
+    removerAtivoSection();
+    sections[index].classList.add('ativo');
+  })
+})
+
+function removerAtivo() {
+  menus.forEach(menu => {
+    if (menu.classList.contains('ativo')) {
+      menu.classList.remove('ativo');
+    }
+  })
+}
+
+
+
+sections.forEach(section => {
+  section.addEventListener('click', () => {
+    removerAtivoSection();
+    section.classList.add('ativo');
+  })
+})
+
+function removerAtivoSection() {
+  sections.forEach(section => {
+    if (section.classList.contains('ativo')) {
+      section.classList.remove('ativo');
+    }
+  })
+}
