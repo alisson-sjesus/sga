@@ -95,10 +95,28 @@ label {
   margin-bottom: 30px;
 }
 
+.btn-limpar {
+  margin-top: 10px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #ff9696;
+  cursor: pointer;
+  color: #4a0000;
+  transition: box-shadow 0.2s, width 0.4s;
+  margin-bottom: 30px;
+}
+
 .btn-nfce:hover {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 }
 
 .btn-copiar:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.btn-limpar:hover {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 }
