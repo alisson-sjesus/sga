@@ -1,11 +1,16 @@
 const btnCopiar = document.querySelector('.btn-copiar');
 const btnGerar = document.querySelector('.btn-nfce');
+const btnLimpar = document.querySelector('.btn-limpar');
+const outputNFCE = document.querySelector('.output-nfce');
+let inputNFCE = document.querySelector('.input-nfce');
+let resultadoArray = '';
+
+// ESTILIZAÇÃO DE FUNCIONAMENTO DO BOTÃO DE GERAR
 
 btnGerar.addEventListener('click', () => {
-  let inputNFCE = document.querySelector('.input-nfce');
   inputNFCE = inputNFCE.value;
 
-  limpar(inputNFCE);
+  corrigirNFCE(inputNFCE);
 
   btnGerar.innerText = 'Gerado ✔';
   btnGerar.style.width = '120px';
@@ -15,6 +20,8 @@ btnGerar.addEventListener('click', () => {
   }, 2000);
 });
 
+// ESTILIZAÇÃO E FUNCIONAMENTO DO BOTÃO DE COPIAR
+
 btnCopiar.addEventListener('click', () => {
   btnCopiar.innerText = 'Copiado ✔';
   btnCopiar.style.width = '120px';
@@ -22,10 +29,17 @@ btnCopiar.addEventListener('click', () => {
     btnCopiar.style.width = '90px';
     btnCopiar.innerText = 'Copiar';
   }, 2000);
+
+  copiar();
 });
 
-function limpar(nfce) {
-  const outputNFCE = document.querySelector('.output-nfce');
+// ATUALIZAR A PÁGINA QUANDO CLICAR EM "LIMPAR"
+
+btnLimpar.addEventListener('click', () => {
+  window.location.reload();
+});
+
+function corrigirNFCE(nfce) {
   const regex = /(?:0{2,})(\d+)(?:\s\d+)?/gm;
   let regexpResult;
 
@@ -33,9 +47,13 @@ function limpar(nfce) {
     outputNFCE.innerHTML += regexpResult[1] + ',';
   }
 
-  const resultadoArray = outputNFCE.innerHTML
+  resultadoArray = outputNFCE.innerHTML
     .split(',')
     .filter((arr) => arr)
     .join(',');
   outputNFCE.innerHTML = resultadoArray;
+}
+
+function copiar() {
+  window.navigator.clipboard.writeText(resultadoArray);
 }
