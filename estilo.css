@@ -2,13 +2,42 @@
   margin: 0;
   padding: 0;
   font-family: monospace;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.container-bg {
+  background-color: #ededed;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .navbar {
   display: flex;
   list-style: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
 }
 
 .navbar li {
-  margin-right: 30px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #969696;
+}
+
+.ativo {
+  font-size: 1.5rem;
+  font-weight: 1000;
+  color: #6b6b6b !important;
+}
+
+.navbar li:hover {
+  color: black;
+  font-weight: 600;
 }
