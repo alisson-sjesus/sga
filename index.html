@@ -15,21 +15,28 @@
     <div class="container">
       <nav>
         <ul class="navbar">
-          <li class="ativo">Gerenciador NFC-e</li>
-          <li>Scripts</li>
-          <li>Úteis</li>
+          <li class="nfce ativo">Gerenciador NFC-e</li>
+          <li class="script">Scripts</li>
+          <li class="uteis">Úteis</li>
         </ul>
       </nav>
     </div>
   </div>
 
-  <section class="nfce">
+  <section class="section-nfce ativo">
     <label for="input-nfce">Cole aqui o número das NFC-es</label>
     <textarea name="input-nfce" class="input-nfce"></textarea>
-    <button class="btn-nfce">Gerar</button>
+    <div class="botoes">
+      <button class="btn-nfce">Gerar</button>
+      <button class="btn-limpar">Limpar</button>
+    </div>
     <label for="output-nfce">Resultado</label>
     <textarea name="output-nfce" readonly class="output-nfce"></textarea>
     <button class="btn-copiar">Copiar</button>
+  </section>
+
+  <section class="section-script">
+    Script
   </section>
 
 
