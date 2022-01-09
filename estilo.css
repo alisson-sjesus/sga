@@ -41,3 +41,64 @@
   color: black;
   font-weight: 600;
 }
+
+.nfce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.input-nfce {
+  width: 500px;
+  height: 150px;
+  resize: none;
+}
+
+.output-nfce {
+  width: 500px;
+  height: 150px;
+  resize: none;
+  background-color: #e8e8e8;
+}
+
+.btn-nfce {
+  margin-top: 10px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #aafac6;
+  cursor: pointer;
+  color: #446650;
+  transition: box-shadow 0.2s, width 0.4s;
+  margin-bottom: 30px;
+}
+
+.btn-copiar {
+  margin-top: 10px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #93c0d9;
+  cursor: pointer;
+  color: #445a66;
+  transition: box-shadow 0.2s, width 0.4s;
+  margin-bottom: 30px;
+}
+
+.btn-nfce:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.btn-copiar:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
