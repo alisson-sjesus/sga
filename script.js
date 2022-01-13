@@ -69,30 +69,93 @@ menus.forEach((menu, index) => {
     menu.classList.add('ativo');
     removerAtivoSection();
     sections[index].classList.add('ativo');
-  })
-})
+  });
+});
 
 function removerAtivo() {
-  menus.forEach(menu => {
+  menus.forEach((menu) => {
     if (menu.classList.contains('ativo')) {
       menu.classList.remove('ativo');
     }
-  })
+  });
 }
 
-
-
-sections.forEach(section => {
+sections.forEach((section) => {
   section.addEventListener('click', () => {
     removerAtivoSection();
     section.classList.add('ativo');
-  })
-})
+  });
+});
 
 function removerAtivoSection() {
-  sections.forEach(section => {
+  sections.forEach((section) => {
     if (section.classList.contains('ativo')) {
       section.classList.remove('ativo');
     }
-  })
+  });
 }
+
+// SCRIPT
+
+const outputScript = document.querySelector('.output-script');
+const opcaoScript = document.querySelector('.selecionar-script');
+
+opcaoScript.addEventListener('change', () => {
+  if (opcaoScript.value === 'nfce') {
+    outputScript.innerHTML = 'select idnfmaster, 1 as tratado from nfmaster';
+  } else {
+    outputScript.innerHTML = `select n.* from nfmaster n\n--join nfdet d on n.idnfmaster = d.idnfmaster\n--join vendas v on v.idnfmaster = n.idnfmaster\n--join areceber a on v.idcompra = a.idcompra\nwhere n.numnota in (${outputNFCE.innerHTML})`
+  }
+})
+
+const data = new Date();
+const anoAnterior = +data.getFullYear() - 1;
+const ano = data.getFullYear();
+const mes = (+data.getMonth() - 1) < 0 ? 12 : +data.getMonth() - 1;
+
+let periodo = '';
+
+switch (mes) {
+  case 12:
+    periodo = `'01.${mes}.${anoAnterior}' and '31.${mes}.${anoAnterior}'`;
+    console.log(periodo);
+    break;
+  case 1:
+    periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
+    break;
+  case 2:
+    periodo = `'01.${mes}.${ano}' and '28.${mes}.${ano}'`;
+    break;
+  case 3:
+    periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
+    break;
+  case 4:
+    periodo = `'01.${mes}.${ano}' and '30.${mes}.${ano}'`;
+    break;
+  case 5:
+    periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
+    break;
+  case 6:
+    periodo = `'01.${mes}.${ano}' and '30.${mes}.${ano}'`;
+    break;
+  case 7:
+    periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
+    break;
+  case 8:
+    periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
+    break;
+  case 9:
+    periodo = `'01.${mes}.${ano}' and '30.${mes}.${ano}'`;
+    break;
+  case 10:
+    periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
+    break;
+  case 11:
+    periodo = `'01.${mes}.${ano}' and '30.${mes}.${ano}'`;
+    break;
+  case 12:
+    periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
+    break;
+}
+
+console.log(mes);
