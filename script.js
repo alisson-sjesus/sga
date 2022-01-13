@@ -100,14 +100,6 @@ function removerAtivoSection() {
 const outputScript = document.querySelector('.output-script');
 const opcaoScript = document.querySelector('.selecionar-script');
 
-opcaoScript.addEventListener('change', () => {
-  if (opcaoScript.value === 'nfce') {
-    outputScript.innerHTML = 'select idnfmaster, 1 as tratado from nfmaster';
-  } else {
-    outputScript.innerHTML = `select n.* from nfmaster n\n--join nfdet d on n.idnfmaster = d.idnfmaster\n--join vendas v on v.idnfmaster = n.idnfmaster\n--join areceber a on v.idcompra = a.idcompra\nwhere n.numnota in (${outputNFCE.innerHTML})`
-  }
-})
-
 const data = new Date();
 const anoAnterior = +data.getFullYear() - 1;
 const ano = data.getFullYear();
@@ -158,4 +150,12 @@ switch (mes) {
     break;
 }
 
-console.log(mes);
+opcaoScript.addEventListener('change', () => {
+  if (opcaoScript.value === 'nfce') {
+    outputScript.innerHTML = `select idnfmaster, 1 as tratado, subserie, current_timestamp as datahora from nfmaster where dataentsai between ${periodo} and serie = 'NFC-E' and protocolo = '' and chavenfe <> '' and situacao = 0`;
+  } else if (opcaoScript.value === 'exportar') {
+    outputScript.innerHTML = `select n.* from nfmaster n\n--join nfdet d on n.idnfmaster = d.idnfmaster\n--join vendas v on v.idnfmaster = n.idnfmaster\n--join areceber a on v.idcompra = a.idcompra\nwhere n.situacao = 0 and n.serie = 'NFC-E' and n.dataentsai between ${periodo}`
+  } else if (opcaoScript.value === 'exportar-numero') {
+    outputScript.innerHTML = `select n.* from nfmaster n\n--join nfdet d on n.idnfmaster = d.idnfmaster\n--join vendas v on v.idnfmaster = n.idnfmaster\n--join areceber a on v.idcompra = a.idcompra\nwhere n.situacao = 0 and n.serie = 'NFC-E' and n.dataentsai between ${periodo} and n.numnota in (${outputNFCE.innerHTML})`
+  }
+})

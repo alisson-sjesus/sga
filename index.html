@@ -37,10 +37,14 @@
 
   <section class="section-script">
     <select name="selecionar-script" class="selecionar-script" id="selecionar-script">
+      <option value="selecionar">- Selecione uma opção - </option>
       <option value="nfce">NFC-e pendente</option>
       <option value="exportar">Exportar movimentação</option>
-      <textarea name="output-script" readonly class="output-script">select idnfmaster, 1 as tratado from nfmaster</textarea>
+      <option value="exportar-numero">Exportar movimentação (Usar numeração NFC-e)</option>
+
     </select>
+    <textarea name="output-script" readonly class="output-script"></textarea>
+    <button class="btn-copiar-script">Copiar</button>
   </section>
 
 
