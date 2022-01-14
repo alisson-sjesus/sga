@@ -167,3 +167,23 @@ label {
   resize: none;
   background-color: #e8e8e8;
 }
+
+.section-uteis {
+  display: none;
+  animation: anima 0.5s forwards;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.output-uteis {
+  margin-top: 20px;
+  width: 500px;
+  height: 150px;
+  resize: none;
+  background-color: #e8e8e8;
+}
+
+.checklist {
+  margin-top: 30px;
+}

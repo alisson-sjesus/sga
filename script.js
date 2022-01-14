@@ -110,7 +110,6 @@ let periodo = '';
 switch (mes) {
   case 12:
     periodo = `'01.${mes}.${anoAnterior}' and '31.${mes}.${anoAnterior}'`;
-    console.log(periodo);
     break;
   case 1:
     periodo = `'01.${mes}.${ano}' and '31.${mes}.${ano}'`;
@@ -157,5 +156,16 @@ opcaoScript.addEventListener('change', () => {
     outputScript.innerHTML = `select n.* from nfmaster n\n--join nfdet d on n.idnfmaster = d.idnfmaster\n--join vendas v on v.idnfmaster = n.idnfmaster\n--join areceber a on v.idcompra = a.idcompra\nwhere n.situacao = 0 and n.serie = 'NFC-E' and n.dataentsai between ${periodo}`
   } else if (opcaoScript.value === 'exportar-numero') {
     outputScript.innerHTML = `select n.* from nfmaster n\n--join nfdet d on n.idnfmaster = d.idnfmaster\n--join vendas v on v.idnfmaster = n.idnfmaster\n--join areceber a on v.idcompra = a.idcompra\nwhere n.situacao = 0 and n.serie = 'NFC-E' and n.dataentsai between ${periodo} and n.numnota in (${outputNFCE.innerHTML})`
+  }
+})
+
+// UTEIS
+
+const opcaoUteis = document.querySelector('.selecionar-uteis');
+const outputUteis = document.querySelector('.output-uteis');
+
+opcaoUteis.addEventListener('change', () => {
+  if (opcaoUteis.value === 'portas') {
+    outputUteis.innerHTML = '65123, 65100, 64123, 9092, 4899, 4096, 3050,992, 993, 995, 587, 465, 445, 80, 21'
   }
 })
