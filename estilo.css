@@ -108,6 +108,20 @@ label {
   margin-bottom: 30px;
 }
 
+.btn-copiar-script {
+  margin-top: 10px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #93c0d9;
+  cursor: pointer;
+  color: #445a66;
+  transition: box-shadow 0.2s, width 0.4s;
+  margin-bottom: 30px;
+}
+
 .btn-limpar {
   margin-top: 10px;
   width: 90px;
@@ -130,6 +144,10 @@ label {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 }
 
+.btn-copiar-script:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
 .btn-limpar:hover {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 }
@@ -137,4 +155,35 @@ label {
 .section-script {
   display: none;
   animation: anima 0.5s forwards;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.output-script {
+  margin-top: 20px;
+  width: 500px;
+  height: 150px;
+  resize: none;
+  background-color: #e8e8e8;
+}
+
+.section-uteis {
+  display: none;
+  animation: anima 0.5s forwards;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.output-uteis {
+  margin-top: 20px;
+  width: 500px;
+  height: 150px;
+  resize: none;
+  background-color: #e8e8e8;
+}
+
+.checklist {
+  margin-top: 30px;
 }

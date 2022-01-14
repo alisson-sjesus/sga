@@ -36,7 +36,44 @@
   </section>
 
   <section class="section-script">
-    Script
+
+    <select name="selecionar-script" class="selecionar-script" id="selecionar-script">
+
+      <option value="selecionar">- Selecione uma opção - </option>
+      <option value="nfce">NFC-e pendente</option>
+      <option value="exportar">Exportar movimentação</option>
+      <option value="exportar-numero">Exportar movimentação (Usar numeração NFC-e)</option>
+
+    </select>
+
+    <textarea name="output-script" readonly class="output-script"></textarea>
+
+    <button class="btn-copiar-script">Copiar</button>
+  </section>
+
+  <section class="section-uteis">
+    <select name="selecionar-uteis" class="selecionar-uteis" id="selecionar-uteis">
+
+      <option value="selecionar">- Selecione uma opção - </option>
+      <option value="portas">Portas do Firewall</option>
+
+    </select>
+
+    <textarea name="output-uteis" readonly class="output-uteis"></textarea>
+
+    <div class="checklist">
+      <h3>Checklist de Atualização</h3>
+
+      <div>
+        <input type="checkbox" name="serv" id="serv">
+        <label for="serv">Base SGA</label>
+      </div>
+
+      <div>
+        <input type="checkbox" name="serv" id="serv">
+        <label for="serv">Base Caixa</label>
+      </div>
+    </div>
   </section>
 
 
